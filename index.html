@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280">
+    <title>Champion's Choice Jerseys</title>
+    <meta name="author" content="Abhi Subedi">
+    <!-- Meta description for SEO -->
+    <meta name="description" content="Champion's Choice Jerseys offers a wide range of high-quality soccer jerseys from the best players worldwide. Participate in our exciting game to win a jersey of your favorite player.">
+    <!-- Meta keywords for SEO -->
+    <meta name="keywords" content="soccer jerseys, soccer players, win a jersey, soccer guessing game, Champion's Choice Jerseys">
+    <!-- Meta robots for SEO -->
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph meta tags for social media sharing -->
+    <meta property="og:title" content="Champion's Choice Jerseys">
+    <meta property="og:description" content="Find jerseys of the most famous soccer players in the world and win one by playing our game!">
+    <meta property="og:image" content="images/soccer01.jpg">
+    <meta property="og:url" content="https://asubedi8.github.io/championsChoiceJerseys/">
+    <!-- Link to Google Fonts for Carter One -->
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+    <!-- Favicon for the website -->
+    <link rel="icon" href="favicon-32x32.png" type="image/x-icon">
+    <!-- Link to the external CSS stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js" defer></script>
+</head>
+
+<body class="light-mode">
+    <div class="main-container">
+        <div class="main-content">
+            <!-- Header section with navigation -->
+            <header>
+                <h1>Champion's Choice Jerseys</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#players-jersey">Players Jersey</a></li>
+                        <li><a href="#play-win">Play & Win</a></li>
+                        <li><a href="#contact-us">Contact Us</a></li>
+                        <li><button id="mode-toggle">☀️</button></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="content">
+                <!-- About section images and introduction -->
+                <section id="about">
+                    <h1>Welcome to the Champion's Choice Jerseys ⚽︎</h1>
+                    <div class="slideshow-container">
+                        <!-- Images for here are from this website: https://wallpapercave.com/cartoon-soccer-wallpapers -->
+                        <img class="slideshow-image" src="images/soccer01.jpg" alt="Soccer Image 1">
+                        <img class="slideshow-image" src="images/soccer02.jpg" alt="Soccer Image 2">
+                        <img class="slideshow-image" src="images/soccer03.jpg" alt="Soccer Image 3">
+                    </div>
+                    <p>Find jerseys of the most famous soccer players in the world and win one by playing our game! At Champion's Choice Jerseys, we offer a wide range of high-quality soccer jerseys from the best players worldwide. Participate in our exciting game to test your luck and knowledge of soccer. Guess the correct number and you could win a jersey of your favorite player.</p>
+                </section>
+
+                <!-- Players section with dynamic content -->
+                <section id="players-jersey">
+                    <h2>Famous Soccer Players Jerseys</h2>
+                    <!-- Images for here are from this website: https://wallpapercave.com/cartoon-soccer-wallpapers -->
+                    <div id="player-display">
+                        <!-- Player info will be dynamically loaded here through JavaScript -->
+                    </div>
+                    <div id="player-controls">
+                        <!-- Controls to switch players will be dynamically generated here through JavaScript -->
+                    </div>
+                </section>
+
+                <!-- Play and win section with a guessing game -->
+                <section id="play-win">
+                    <h2>Play & Win</h2>
+                    <div class="play-win-container">
+                        <!-- Images for here are from this website: https://www.silvergames.com/en/soccer-random -->
+                        <img src="/otherImages/playSoccer.png" alt="Play Soccer" class="play-win-image">
+                        <div class="play-win-content">
+                            <p><strong>Guess the number between 1 and 10 to win a jersey!</strong></p>
+                            <form id="guess-form">
+                                <label for="guess"><strong>Enter your guess:</strong></label>
+                                <input type="number" id="guess" name="guess" min="1" max="10" required>
+                                <button type="submit">Submit</button>
+                            </form>
+                            <div id="game-result"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact section with form -->
+                <section id="contact-us">
+                    <h2>Contact Us</h2>
+                    <div class="contact-container">
+                        <div class="contact-form-container">
+                            <form id="contact-form">
+                                <label for="name">Full Name:</label>
+                                <input type="text" id="name" name="name" required>
+                
+                                <label for="phone">Phone Number:</label>
+                                <input type="tel" id="phone" name="phone">
+                
+                                <label for="email">Email Address:</label>
+                                <input type="email" id="email" name="email">
+                
+                                <label for="comments">Comments:</label>
+                                <textarea id="comments" name="comments" required></textarea>
+                
+                                <label>Preferred Contact Method:</label>
+                                <div class="radio-group">
+                                    <input type="radio" id="contact-phone" name="contact-preference" value="phone" required>
+                                    <label for="contact-phone">Phone</label>
+                                    <input type="radio" id="contact-email" name="contact-preference" value="email" required>
+                                    <label for="contact-email">Email</label>
+                                </div>
+                                <button type="submit">Submit</button>
+                            </form>
+                            <div id="form-result"></div>
+                        </div>
+                        <div class="contact-image-container">
+                            <!-- Images for here are from this website: https://dribbble.com/shots/22570727-Soccer-Cartoon-Background -->
+                            <img src="/otherImages/soccerStadium.jpg" alt="Soccer Stadium" class="contact-image">
+                        </div>
+                    </div>
+                </section>  
+            </div>
+
+            <!-- Footer section -->
+            <footer>
+                <p>&copy; 2024 Champion's Choice Jerseys</p>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

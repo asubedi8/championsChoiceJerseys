@@ -1,0 +1,589 @@
+/* Author: Abhi Subedi */
+
+/* Root variables for theme colors */
+:root {
+    --main-bg-color: #D3D9D4;
+    --main-text-color: #212A31;
+    --header-footer-bg-color: #748D92;
+    --link-hover-color: #EFB11D;
+    --scrollbar-thumb-color: #2E3944;
+    --nav-footer-text-color: #FFFFFF;
+    --glow-color: rgba(239, 177, 29, 0.3); 
+}
+
+/* Base styles for the body */
+body {
+    font-family: 'Carter One', sans-serif;
+    color: var(--main-text-color);
+    background-color: var(--main-bg-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+}
+
+/* Main container styles */
+.main-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Main content area styles */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styles */
+header {
+    background-color: var(--header-footer-bg-color);
+    padding: 0.2em;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0.5em 0 0.2em 0;
+    font-size: 2em;
+    color: var(--nav-footer-text-color);
+}
+
+/* Navigation styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin: 0;
+}
+
+nav ul li {
+    position: relative;
+    background-color: var(--scrollbar-thumb-color);
+    color: var(--nav-footer-text-color);
+    padding: 0.5em 1em;
+    cursor: pointer;
+    font-size: 0.8em;
+    border-radius: 25px;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+nav ul li a,
+nav ul li button {
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Carter One', sans-serif;
+    font-size: 1em;
+    display: block;
+    text-align: center;
+}
+
+nav ul li:hover {
+    background-color: var(--link-hover-color);
+    color: var(--main-text-color);
+    box-shadow: 0 0 10px var(--link-hover-color);
+}
+
+/* Mode toggle button styles */
+#mode-toggle {
+    background-color: var(--scrollbar-thumb-color);
+    color: var(--main-text-color);
+    padding: 0.5em 1em;
+    cursor: pointer;
+    font-size: 0.8em;
+    border-radius: 20px;
+}
+
+/* Footer styles */
+footer {
+    background-color: var(--header-footer-bg-color);
+    color: var(--nav-footer-text-color);
+    font-weight: bold;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+}
+
+/* Content area styles */
+.content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 2em;
+}
+
+/* Section styles */
+section {
+    padding: 2em;
+    text-align: center;
+    border: 2px solid var(--header-footer-bg-color);
+    border-radius: 10px;
+    margin-bottom: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 15px var(--glow-color);
+}
+
+section h2 {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0.5em;
+    border-radius: 10px;
+}
+
+section h2::before,
+section h2::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 120%;
+    height: 100%;
+    background: var(--glow-color);
+    z-index: -1;
+    transform: translateX(-50%);
+    filter: blur(20px);
+    opacity: 0.5;
+    border-radius: 50px;
+}
+
+/* Slideshow container styles */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Slideshow image styles */
+.slideshow-image {
+    width: 600px;
+    border: 5px solid var(--header-footer-bg-color);
+    border-radius: 10px;
+    display: none;
+    transition: opacity 1s;
+    margin: 0 auto;
+}
+
+.slideshow-image.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Button styles */
+button {
+    background-color: var(--scrollbar-thumb-color);
+    color: var(--nav-footer-text-color);
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 20px;
+    font-family: 'Carter One', sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: var(--link-hover-color);
+    color: var(--main-text-color);
+    box-shadow: 0 0 10px var(--link-hover-color);
+}
+
+/* Player display styles */
+#player-display,
+#jersey-display,
+#game-result,
+#form-result {
+    margin-top: 1em;
+    text-align: center;
+}
+
+.player-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    max-width: 100%;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: left;
+    padding: 1em;
+}
+
+.player-image {
+    width: 550px;
+    height: 380px;
+    border: 5px solid var(--header-footer-bg-color);
+    border-radius: 10px;
+    display: block;
+    transition: opacity 1s;
+}
+
+.player-description {
+    max-width: 600px;
+}
+
+/* Player controls styles */
+#player-controls {
+    display: flex;
+    gap: 4em;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+#player-controls button {
+    background-color: var(--scrollbar-thumb-color);
+    color: var(--nav-footer-text-color);
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 20px;
+    font-family: 'Carter One', sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+#player-controls button:hover {
+    background-color: var(--link-hover-color);
+    color: var(--main-text-color);
+    box-shadow: 0 0 10px var(--link-hover-color);
+}
+
+
+/* Play & Win section image */
+.play-win-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.play-win-image {
+    max-width: 400px; 
+    width: 100%; 
+    height: auto;
+    border: 5px solid var(--header-footer-bg-color);
+    border-radius: 10px;
+    flex: 1;
+    margin-top: 10px;
+}
+
+/*  Contact section */
+.contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.contact-form-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+}
+
+.contact-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-image {
+    max-width: 500px; 
+    width: 100%; 
+    height: auto;
+    border: 5px solid var(--header-footer-bg-color);
+    border-radius: 10px;
+}
+
+/* Contact form  Styled */
+#contact-form label,
+#contact-form input,
+#contact-form textarea,
+#contact-form button {
+    margin: 0.5em 0;
+}
+
+/*  Radio buttons group */
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.radio-group label {
+    margin: 0;
+}
+
+/* Form styles */
+form label,
+form input,
+form textarea {
+    display: block;
+    margin: 0.5em 0;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.5em;
+    box-sizing: border-box;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label,
+form input,
+form textarea,
+form button {
+    display: block;
+    margin: 0.5em 0;
+    width: 50%;
+}
+
+form input,
+form textarea {
+    padding: 0.5em;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+form button {
+    background-color: var(--scrollbar-thumb-color);
+    color: var(--nav-footer-text-color);
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 20px;
+    font-family: 'Carter One', sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+form button:hover {
+    background-color: var(--link-hover-color);
+    color: var(--main-text-color);
+    box-shadow: 0 0 10px var(--link-hover-color);
+}
+
+/* Scrollbar styles */
+.content::-webkit-scrollbar,
+aside.cart::-webkit-scrollbar {
+    width: 12px;
+}
+
+.content::-webkit-scrollbar-track,
+aside.cart::-webkit-scrollbar-track {
+    background: var(--header-footer-bg-color);
+}
+
+.content::-webkit-scrollbar-thumb,
+aside.cart::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-color);
+    border-radius: 20px;
+    border: 3px solid var(--header-footer-bg-color);
+}
+
+.content::-webkit-scrollbar-thumb:hover,
+aside.cart::-webkit-scrollbar-thumb:hover {
+    background-color: var(--link-hover-color);
+}
+
+/* Dark mode styles */
+body:not(.light-mode) {
+    --main-bg-color: #212A31;
+    --main-text-color: #D3D9D4;
+    --header-footer-bg-color: #2E3944;
+    --scrollbar-thumb-color: #124E66;
+    --glow-color: rgba(239, 177, 29, 0.3);
+}
+
+body.light-mode button {
+    color: var(--nav-footer-text-color);
+}
+
+body.light-mode button:hover {
+    background-color: var(--link-hover-color);
+    color: var(--main-text-color);
+    box-shadow: 0 0 10px var(--link-hover-color);
+}
+
+/* Responsive styles for small screens */
+@media only screen and (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    .main-container {
+        flex-direction: column;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 1em;
+        font-size: 1.2em;
+    }
+    .slideshow-image {
+        width: 100%;
+    }
+    .player-container {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: center;
+    }
+    .player-image {
+        width: 100%;
+        height: auto;
+    }
+    #player-controls {
+        flex-direction: column;
+        gap: 1em;
+        align-items: center;
+    }
+    form label,
+    form input,
+    form textarea,
+    form button {
+        width: 100%;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 0.2em;
+        font-size: 1.1em;
+    }
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 0.5em;
+        right: 0.5em;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        z-index: 100;
+    }
+    .hamburger span {
+        display: block;
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        background: var(--nav-footer-text-color);
+        border-radius: 4px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: 0.25s ease-in-out;
+    }
+    .hamburger span:nth-child(1) {
+        top: 0px;
+    }
+    .hamburger span:nth-child(2),
+    .hamburger span:nth-child(3) {
+        top: 12px;
+    }
+    .hamburger span:nth-child(4) {
+        top: 24px;
+    }
+    .hamburger.open span:nth-child(1) {
+        top: 12px;
+        transform: rotate(135deg);
+    }
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+        left: -60px;
+    }
+    .hamburger.open span:nth-child(3) {
+        top: 12px;
+        transform: rotate(-135deg);
+    }
+    .hamburger.open span:nth-child(4) {
+        top: 12px;
+        transform: rotate(-45deg);
+    }
+    .hamburger-menu {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--header-footer-bg-color);
+        z-index: 99;
+    }
+    .hamburger-menu ul {
+        list-style: none;
+        padding: 0;
+        font-size: 1.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+        margin: 0;
+        height: 100%;
+    }
+    .hamburger-menu ul li {
+        position: relative;
+        background-color: var(--scrollbar-thumb-color);
+        color: var(--nav-footer-text-color);
+        padding: 0.5em 1em;
+        cursor: pointer;
+        font-size: 0.8em;
+        border-radius: 20px;
+        transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    }
+    .hamburger-menu ul li a,
+    .hamburger-menu ul li button {
+        color: inherit;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: 'Carter One', sans-serif;
+        font-size: 1em;
+        display: block;
+        text-align: center;
+    }
+    .hamburger-menu ul li:hover {
+        background-color: var(--link-hover-color);
+        color: var(--main-text-color);
+        box-shadow: 0 0 10px var(--link-hover-color);
+    }
+    .hamburger-menu.open {
+        display: block;
+    }
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-image-container {
+        order: -1;
+    }
+
+    .contact-image {
+        max-width: 100%; 
+    }
+}
